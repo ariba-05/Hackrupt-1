@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Sanjeevini</title>
+</head>
+
+<body>
+  <div class="formSignIn">
+    <div class="text-center mb-4">
+      <img class="mb-4" src="images/logo.png" alt="" width="100" height="100">
+      <h1 class="h3 mb-3 font-weight-normal">Sanjeevini</h1>
+      <p>Login With your Aadhar Number
+        <div class="d-none" id="phoneShow">
+          Check SMS on <code><span id="phone"></span></code>
+        </div>
+      </p>
+    </div>
+    <div class="form-label-group">
+      <input type="text" id="name" class="form-control" placeholder="Name" required autofocus>
+    </div>
+    <div>
+      <input type="text" id="aadhar" class="form-control" placeholder="Aadhar number" required autofocus>
+    </div>
+    <div>
+      <input type="number" id="phone" class="form-control" placeholder="Phone Number" required autofocus>
+    </div>
+    <div class="form-label-group">
+      <input type="password" id="otp" class="form-control" placeholder="Enter OTP" required>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" id="signIn" type="submit" disabled>Register</button>
+    <button class="btn btn-lg btn-light btn-block" type="submit" id="signUp">or Sign In</button>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+  </div>
+</body>
