@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="formSignIn">
+  <form class="formSignIn" action="data/signup.php">
     <div class="text-center mb-4">
       <img class="mb-4" src="images/logo.png" alt="" width="100" height="100">
       <h1 class="h3 mb-3 font-weight-normal">Sanjeevini</h1>
@@ -30,11 +30,29 @@
     <div>
       <input type="number" id="phone" class="form-control" placeholder="Phone Number" required autofocus>
     </div>
-    <div class="form-label-group">
-      <input type="password" id="otp" class="form-control" placeholder="Enter OTP" required>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" id="signIn" type="submit" disabled>Register</button>
-    <button class="btn btn-lg btn-light btn-block" type="submit" id="signUp">or Sign In</button>
+    <button class="btn btn-lg btn-primary btn-block" id="signIn" type="submit">Register</button>
+    <button class="btn btn-lg btn-light btn-block" id="signUp">or Sign In</button>
     <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
-  </div>
+  </form>
+  <script type="text/javascript">
+  window.s = document.querySelector.bind(document);
+  Element.prototype.s = Element.prototype.querySelector;
+  var formData = {
+    name: s("#name").value,
+    aadhar: s("#aadhar").value,
+    phone: s("#phone").value
+  }
+  s(".formSignIn").addEventListener("submit",function(e){
+    event.preventDefault();
+      var x = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+      x.open("POST", "data/sanjeevini.php", true);
+      x.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      x.send("data="+formData);
+      x.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          alert("okkk");
+        }
+      }
+  });
+  </script>
 </body>
